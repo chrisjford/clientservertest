@@ -5,6 +5,9 @@ class numpysocket():
     def __init__(self):
         pass
 
+    def __enter__(self):
+        return self
+
     @staticmethod
     def startServer(server_ip, port):
         with MLSocket() as s:
