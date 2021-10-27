@@ -24,6 +24,6 @@ class numpysocket():
     @staticmethod
     def startClient(server_ip, port):
         array = np.random.randint(0,255, size=(150,150))
-        with MLSocket as s:
+        with MLSocket() as s:
             s.connect((server_ip, port))
             s.send(array)

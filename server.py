@@ -1,15 +1,11 @@
 import numpy as np
 import socket
 from mlsocket import MLSocket
+from main import numpysocket
 
 server_ip = '164.11.72.118'
-port = 9001
+port = 5777
 
-with MLSocket() as s:
-    s.bind((server_ip, port))
-    s.listen()
-    conn, address = s.accept()
-    print('connection established')
+array = numpysocket.startServer(server_ip, port)
 
-    with conn:
-        array = conn.recv(1024) # This will block until it receives all the data send by the client, with the step size of 1024 bytes.
+print(array)
