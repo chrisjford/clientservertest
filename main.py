@@ -8,7 +8,7 @@ class numpysocket():
 
     @staticmethod
     def startServer():
-        port='7555'
+        port=7555
         server_socket=socket.socket() 
         server_socket.bind(('',port))
         server_socket.listen(1)
@@ -33,7 +33,7 @@ class numpysocket():
             print ('not a valid numpy image')
             return
         client_socket=socket.socket()
-        port='7555'
+        port=7555
         
         client_socket.connect((server_address, port))
         print ('Connected to:', server_address)
